@@ -25,8 +25,11 @@ export function HeadToHeadGame() {
     function handleKeyDown(event: KeyboardEvent) {
       const target = event.target as HTMLElement;
       if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') return;
-      if (event.key.toLowerCase() === 'a') buzz(1);
-      if (event.key.toLowerCase() === 'l') buzz(2);
+      const key = event.key.toLowerCase();
+      if (key !== 'a' && key !== 'l') return;
+
+      event.preventDefault();
+      buzz(key === 'a' ? 1 : 2);
     }
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
