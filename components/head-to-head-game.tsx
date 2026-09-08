@@ -62,8 +62,8 @@ export function HeadToHeadGame() {
   function scoreResponse(response: string) {
     if (!buzzedPlayer || !response.trim() || result) return null;
     const correct = isCorrectAnswer(question, response);
-    const scoreChange = correct ? 10 : -5;
-    setScores((current) => ({ ...current, [buzzedPlayer]: current[buzzedPlayer] + (correct ? 10 : -5) }));
+    const scoreChange = correct ? 5 : -5;
+    setScores((current) => ({ ...current, [buzzedPlayer]: current[buzzedPlayer] + scoreChange }));
     setResult(correct ? 'correct' : 'wrong');
     setAnswer(response);
     return { player: buzzedPlayer, correct, scoreChange, acceptedAnswer: question.answer };
@@ -133,7 +133,7 @@ export function HeadToHeadGame() {
       context.registerTool({
         name: 'submit_player_answer',
         title: 'Submit player answer',
-        description: 'Submit the answer for the player who buzzed first and apply the +10 or −5 score change.',
+        description: 'Submit the answer for the player who buzzed first and apply the +5 or −5 score change.',
         inputSchema: {
           type: 'object',
           properties: { answer: { type: 'string', minLength: 1 } },
@@ -184,9 +184,9 @@ export function HeadToHeadGame() {
               </div>
             </form>
           )}
-          {result && <div className={`result-banner ${result}`} role="status">{result === 'correct' ? <Check size={20} /> : <X size={20} />}<span>Player {buzzedPlayer} {result === 'correct' ? 'is correct — +10' : `missed — −5. Answer: ${question.answer}`}</span></div>}
+          {result && <div className={`result-banner ${result}`} role="status">{result === 'correct' ? <Check size={20} /> : <X size={20} />}<span>Player {buzzedPlayer} {result === 'correct' ? 'is correct — +5' : `missed — −5. Answer: ${question.answer}`}</span></div>}
         </article>
-        <p className="rules-line"><b>Scoring</b><span>Correct +10</span><span>Incorrect −5</span><span>Q / P to pass</span><span>Only the first buzz can answer</span></p>
+        <p className="rules-line"><b>Scoring</b><span>Correct +5</span><span>Incorrect −5</span><span>Q / P to pass</span><span>Only the first buzz can answer</span></p>
       </section>
     </main>
   );
