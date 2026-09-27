@@ -1,6 +1,8 @@
 # Quiz Arena
 
-A small academic team practice app by Eshan Vipuil, with solo quizzes and two-player buzzer matches in the same browser. Ten sample questions cover science, history, literature, mathematics, geography, and art.
+![Quiz Arena head-to-head match with two player scores, buzzer controls, and a question](docs/images/buzzer-match.png)
+
+An academic team practice app with solo quizzes and two-player buzzer matches in the same browser. Ten sample questions cover science, history, literature, mathematics, geography, and art.
 
 ## How to play
 
@@ -23,10 +25,6 @@ Open the local address printed in the terminal.
 
 ## About the project
 
-Eshan's work includes the two game modes, the buzzer input fix, pass controls, and head-to-head scoring. The [version history](CHANGELOG.md) describes how the app developed.
+I built the solo and head-to-head modes, keyboard buzzer controls, pass actions, and scoring. The [version history](CHANGELOG.md) describes how the app developed.
 
 Built with React and TypeScript using the OpenAI Sites starter, vinext, Tailwind CSS, Lucide icons, and shadcn/Base UI components. Credit for those tools and shared components belongs to their respective authors.
-
-## Research papers
-
-The [attached papers](papers/) cover Eshan's separate research projects. They are also available in the [research collection](https://github.com/evipuil/evipuil/tree/main/papers).
